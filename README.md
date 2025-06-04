@@ -5,21 +5,13 @@
 
 
 <p align="center">
-  <a href="https://arxiv.org/abs/2403.12037">
-    <img src="https://img.shields.io/badge/arXiv-TODO-b31b1b.svg" alt="arXiv">
-  </a>
-
-  <a href="https://zhoues.github.io/RoboRefer/">
-    <img src="https://img.shields.io/badge/%F0%9F%8F%A0%20Project-Homepage-blue" alt="Project Homepage">
-  </a>
-
-  <a href="https://huggingface.co/datasets/BAAI/RefSpatial-Bench">
-    <img src="https://img.shields.io/badge/🤗%20Benchmark-RefSpatial--Bench-green.svg" alt="Benchmark">
-  </a>
-
-  <a href="#">
-    <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Weights-Stay%20tuned-yellow" alt="Weights">
-  </a>
+  <a href="https://arxiv.org/abs/2403.12037"><img src="https://img.shields.io/badge/arXiv-TODO-b31b1b.svg" alt="arXiv"></a>
+  &nbsp;
+  <a href="https://zhoues.github.io/RoboRefer/"><img src="https://img.shields.io/badge/%F0%9F%8F%A0%20Project-Homepage-blue" alt="Project Homepage"></a>
+  &nbsp;
+  <a href="https://huggingface.co/datasets/BAAI/RefSpatial-Bench"><img src="https://img.shields.io/badge/🤗%20Benchmark-RefSpatial--Bench-green.svg" alt="Benchmark"></a>
+  &nbsp;
+  <a href="#"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Weights-Stay%20tuned-yellow" alt="Weights"></a>
 </p>
 
 <br>
