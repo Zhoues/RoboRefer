@@ -24,8 +24,9 @@
 
 
 ## 🔥 Updates
-[2025-06-05] 🔥🔥🔥 RefSpatial-Bench is released on HF. Let's evaluate your model's spatial referring ability!
-[HF](https://huggingface.co/datasets/BAAI/RefSpatial-Bench)
+[2025-06-05] 🔥🔥🔥 RefSpatial-Bench is released on [HF](https://huggingface.co/datasets/BAAI/RefSpatial-Bench). Let's evaluate your model's spatial referring ability!
+
+
 [2025-06-05] RoboRefer is released on [arxiv]().
 
 [2026-06-01] The Project page is set up at [here](https://zhoues.github.io/RoboRefer/).
@@ -46,16 +47,16 @@
 
 
 ## TODO
-- [ ] Release RefSpatial-Bench evaluation code (About 1 weeks).
+- [ ] Release RefSpatial-Bench evaluation code (About 1 week).
 - [ ] Release the SFT-trained 2B RoboRefer model and inference code (About 2 weeks).
 - [ ] Release the SFT-trained 8B RoboRefer model (About 3 weeks).
 - [ ] Release the RefSpatial Dataset and SFT training code (About 1 month).
-- [ ] Release the RFT-trained RoboRefer model and training code (Maybe 2 month or more).
-- [ ] Release the Dataset Generation Pipeline (Maybe 2 month or more).
+- [ ] Release the RFT-trained RoboRefer model and training code (Maybe 2 months or more).
+- [ ] Release the Dataset Generation Pipeline (Maybe 2 months or more).
 
 
 ## Contact
-If you have any questions related to the code or the paper, feel free to email Enshen (`zhouenshen@buaa.edu.cn`) and Jingkun (`anjingkun02@gmail.com`). 
+If you have any questions about the code or the paper, feel free to email Enshen (`zhouenshen@buaa.edu.cn`) and Jingkun (`anjingkun02@gmail.com`). 
 
 
 
