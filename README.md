@@ -1,6 +1,8 @@
 
 <h1 align="center">RoboRefer: Towards Spatial Referring with Reasoning in Vision-Language Models for Robotics</h1>
 
+<h4 align="center">From words to exactly where you mean — with RoboRefer</h4>
+
 
 <p align="center">
   <a href="https://arxiv.org/abs/2403.12037">
@@ -35,12 +37,19 @@
 ## 🕶️Overview
 
 ### The Overview of RoboRefer
+
+We introduce RoboRefer, **the first 3D-aware reasoning VLM** for multi-step spatial referring with explicit reasoning.
+
 <div align="center"> 
     <img src="assets/pipeline.png" alt="Logo" style="width=100%;vertical-align:middle">
 </div>
 
 
 ### The Overview of the RefSpatial Dataset and its Generation Pipeline
+
+We present RefSpatial, a dataset can enable general VLMs to adapt to spatial referring tasks, with **20M QA pairs (2x prior)** and **31 spatial relations (vs. 15 prior)** and **complex reasoning processes (up to 5 steps)**.
+
+
 <div align="center"> 
     <img src="assets/dataset.png" alt="Logo" style="width=100%;vertical-align:middle">
 </div>
