@@ -1,7 +1,7 @@
 
 <h1 align="center">RoboRefer: Towards Spatial Referring with Reasoning in Vision-Language Models for Robotics</h1>
 
-<h4 align="center">From words to exactly where you mean — with RoboRefer</h4>
+<h3 align="center">From words to exactly where you mean — with RoboRefer</h3>
 
 
 <p align="center">
@@ -18,6 +18,8 @@
     <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Weights-Stay%20tuned-yellow" alt="Weights">
   </a>
 </p>
+
+<br>
 
 
 <div style="text-align: center; background-color: white;">
