@@ -5,12 +5,30 @@
 
 
 
-[![arXiv](https://img.shields.io/badge/arXiv-TODO-b31b1b.svg)](https://arxiv.org/abs/2403.12037)&nbsp;
-[![Project Homepage](https://img.shields.io/badge/%F0%9F%8F%A0%20Project-Homepage-blue)](https://zhoues.github.io/RoboRefer/)
-&nbsp;
-[![Generic badge](https://img.shields.io/badge/🤗%20Benchmark-RefSpatial--Bench-green.svg)](https://huggingface.co/datasets/BAAI/RefSpatial-Bench)&nbsp;
-[![huggingface weights](https://img.shields.io/badge/%F0%9F%A4%97%20Weights-Stay%20tuned-yellow)]()&nbsp;
-<!-- [![huggingface weights](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-Zhoues/Goal_Drift_Dataset-yellow)](https://huggingface.co/datasets/Zhoues/Goal-Drift-Dataset)&nbsp; -->
+
+
+<p>
+  <span style="display:inline-block; vertical-align:middle;">
+    <a href="https://arxiv.org/abs/2403.12037">
+      <img src="https://img.shields.io/badge/arXiv-TODO-b31b1b.svg" alt="arXiv">
+    </a>
+  </span>
+  <span style="display:inline-block; vertical-align:middle;">
+    <a href="https://zhoues.github.io/RoboRefer/">
+      <img src="https://img.shields.io/badge/%F0%9F%8F%A0%20Project-Homepage-blue" alt="Project Homepage">
+    </a>
+  </span>
+  <span style="display:inline-block; vertical-align:middle;">
+    <a href="https://huggingface.co/datasets/BAAI/RefSpatial-Bench">
+      <img src="https://img.shields.io/badge/🤗%20Benchmark-RefSpatial--Bench-green.svg" alt="Benchmark">
+    </a>
+  </span>
+  <span style="display:inline-block; vertical-align:middle;">
+    <a href="#">
+      <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Weights-Stay%20tuned-yellow" alt="Weights">
+    </a>
+  </span>
+</p>
 
 
 <div style="text-align: center; background-color: white;">
@@ -19,7 +37,7 @@
 
 
 ## 🔥 Updates
-[2025-06-05] 🔥🔥🔥 RefSpatial-Bench code is released on [HF](https://huggingface.co/datasets/BAAI/RefSpatial-Bench). Let's evaluate the spatial referring capabilities of your model!
+[2025-06-05] 🔥🔥🔥 RefSpatial-Bench is released on [HF](https://huggingface.co/datasets/BAAI/RefSpatial-Bench). Let's evaluate the spatial referring capabilities of your model!
 
 [2025-06-05] RoboRefer is released on [arxiv]().
 
@@ -71,7 +89,7 @@ If you have any questions related to the code or the paper, feel free to email E
 
 ## 📑 Citation
 
-If you find RoboRefer, RefSpatial and RefeSpatial-Bench useful for your research and applications, please cite using this BibTeX:
+If you find RoboRefer, RefSpatial, and RefeSpatial-Bench useful for your research, please cite using this BibTeX:
 ```
 TODO
 ```
