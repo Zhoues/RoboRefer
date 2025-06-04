@@ -8,19 +8,21 @@
   <a href="https://arxiv.org/abs/2403.12037">
     <img src="https://img.shields.io/badge/arXiv-TODO-b31b1b.svg" alt="arXiv">
   </a>
+
   <a href="https://zhoues.github.io/RoboRefer/">
     <img src="https://img.shields.io/badge/%F0%9F%8F%A0%20Project-Homepage-blue" alt="Project Homepage">
   </a>
+
   <a href="https://huggingface.co/datasets/BAAI/RefSpatial-Bench">
     <img src="https://img.shields.io/badge/🤗%20Benchmark-RefSpatial--Bench-green.svg" alt="Benchmark">
   </a>
+
   <a href="#">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Weights-Stay%20tuned-yellow" alt="Weights">
   </a>
 </p>
 
 <br>
-
 
 <div style="text-align: center; background-color: white;">
     <img src="assets/motivation.png" width=100% >
@@ -30,10 +32,7 @@
 ## 🔥 Updates
 [2025-06-05] 🔥🔥🔥 RefSpatial-Bench is released on [HF](https://huggingface.co/datasets/BAAI/RefSpatial-Bench). Let's evaluate your model's spatial referring ability!
 
-
-[2025-06-05] RoboRefer is released on [arxiv]().
-
-[2026-06-01] The Project page is set up at [here](https://zhoues.github.io/RoboRefer/).
+[2025-06-05] RoboRefer is released on [arxiv]() and the project page is set up at [here](https://zhoues.github.io/RoboRefer/).
 
 
 ## 🕶️Overview
