@@ -81,5 +81,10 @@ If you have any questions about the code or the paper, feel free to email Enshen
 
 If you find RoboRefer, RefSpatial, and RefeSpatial-Bench useful for your research, please cite using this BibTeX:
 ```
-TODO
+@article{zhou2025roborefer,
+    title={RoboRefer: Towards Spatial Referring with Reasoning in Vision-Language Models for Robotics},
+    author={Zhou, Enshen and An, Jingkun and Chi, Cheng and Han, Yi and Rong, Shanyu and Zhang, Chi and Wang, Pengwei and Wang, Zhongyuan and Huang, Tiejun and Sheng, Lu and Zhang, Shanghang},
+    journal={arXiv preprint arXiv:TODO},
+    year={2025}
+}
 ```
