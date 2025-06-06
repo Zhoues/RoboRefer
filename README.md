@@ -84,7 +84,7 @@ If you find RoboRefer, RefSpatial, and RefeSpatial-Bench useful for your researc
 @article{zhou2025roborefer,
     title={RoboRefer: Towards Spatial Referring with Reasoning in Vision-Language Models for Robotics},
     author={Zhou, Enshen and An, Jingkun and Chi, Cheng and Han, Yi and Rong, Shanyu and Zhang, Chi and Wang, Pengwei and Wang, Zhongyuan and Huang, Tiejun and Sheng, Lu and Zhang, Shanghang},
-    journal={arXiv preprint arXiv:TODO},
+    journal={arXiv preprint arXiv:2506.04308},
     year={2025}
 }
 ```
