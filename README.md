@@ -27,6 +27,163 @@
 [2025-06-06] RoboRefer is released on [arxiv](https://arxiv.org/abs/2506.04308) and the project page is set up at [here](https://zhoues.github.io/RoboRefer/).
 
 
+
+## 🤗 Model Zoo &  Dataset & Benchmark
+
+
+<table>
+  <tr>
+    <th>Model/Dataset/Benchmark Name</th>
+    <th>HF Path</th>
+    <th>Note</th>
+  </tr>
+  <tr>
+    <td>RoboRefer-2B-Depth-Align</td>
+    <td><a href="https://huggingface.co/Zhoues/RoboRefer-2B-Depth-Align">roborefer-2b-depth-align-latest</a></td>
+    <td> The sft-step-1 2B model trained for depth alignment. </td>
+  </tr>
+    <tr>
+    <td>RoboRefer-2B-SFT</td>
+    <td><a href="https://huggingface.co/Zhoues/RoboRefer-2B-SFT">roborefer-2b-sft-latest</a></td>
+    <td> The sft-step-2 2B model trained for spatial understanding and referring.</td>
+  </tr>
+  <tr>
+    <td>RoboRefer-8B-Depth-Align</td>
+    <td>Coming soon</td>
+    <!-- <td><a href="https://huggingface.co/Zhoues/RoboRefer-8B-Depth-Align">roborefer-8b-depth-align-latest</a></td> -->
+    <td> The sft-step-1 8B model trained for depth alignment. </td>
+  </tr>
+    <tr>
+    <td>RoboRefer-8B-SFT</td>
+    <td>Coming soon</td>
+    <!-- <td><a href="https://huggingface.co/Zhoues/RoboRefer-8B-SFT">roborefer-8b-sft-latest</a></td> -->
+    <td> The sft-step-2 8B model trained for spatial understanding and referring.</td>
+  </tr>
+  <tr>
+    <td>RefSpatial Dataset</td>
+    <td>Coming soon</td>
+    <td> The dataset for spatial understanding and referring with reasoning. </td>
+  </tr>
+  <tr>
+    <td>RefSpatial-Bench</td>
+    <td><a href="https://huggingface.co/datasets/BAAI/RefSpatial-Bench">refspatial-bench-latest</a></td>
+    <td> The benchmark for spatial referring with reasoning. </td>
+  </tr>
+</table>
+
+## 🚀 Quick Start
+1. Install [Anaconda Distribution](https://www.anaconda.com/download/).
+2. Install the necessary Python packages in the environment.
+      ```bash
+      bash env_step.sh roborefer
+      ```
+3. Activate a conda environment.
+      ```bash
+      conda activate roborefer
+      ```
+
+
+## 💡 Inference
+
+1. Download the model weights from the [model zoo](#-model-zoo---dataset--benchmark) (e.g., `roborefer-2b-sft-latest`).
+
+2. Download the relative depth estimation model weights (e.g., [`Depth-Anything-V2-Large`](https://huggingface.co/depth-anything/Depth-Anything-V2-Large/resolve/main/depth_anything_v2_vitl.pth?download=true)).
+
+3. Run the inference api server.
+      ```bash
+      cd API 
+      
+      python api.py \
+      --port 25547 \
+      --depth_model_path /your/custom/path/depth_anything_v2_vitl.pth \
+      --vlm_model_path /your/custom/path/to/roborefer
+      ```
+
+4. Run the inference script with the API and Check the results in the `assets` folder.
+      ```bash
+      cd API 
+      
+      python use_api.py \
+      --image_path ../assets/test.jpg \
+      --prompt "Pick the apple in front of the logo side of the leftmost cup." \
+      --output_path ../assets/my_result_1.jpg \
+      --url http://127.0.0.1:25547
+
+      python use_api.py \
+      --image_path ../assets/test.jpg \
+      --prompt "Point out the apple nearest to the second cup from left to right." \
+      --output_path ../assets/my_result_2.jpg \
+      --url http://127.0.0.1:25547
+
+      python use_api.py \
+      --image_path ../assets/test.jpg \
+      --prompt "Point to the free area between the farthest apple and pink cake." \
+      --output_path ../assets/my_result_3.jpg \
+      --url http://127.0.0.1:25547
+      ```
+
+Below are the results of the inference as examples.
+
+<table>
+  <tr>
+    <th>Original Image</th>
+    <th>"Pick the apple in front of the logo side of the leftmost cup."</th>
+    <th>"Point out the apple nearest to the second cup from left to right."</th>
+    <th>"Point to the free area between the farthest apple and pink cake."</th>
+  </tr>
+  <tr>
+    <td><img src="assets/test.jpg" width=100% ></td>
+    <td><img src="assets/test_result_1.jpg" width=100% ></td>
+    <td><img src="assets/test_result_2.jpg" width=100% ></td>
+    <td><img src="assets/test_result_3.jpg" width=100% ></td>
+</table>
+
+
+
+
+
+## 🔍 Evaluation for RefSpatial-Bench
+
+1. Open the `Evaluation` folder and download the RefSpatial-Bench dataset from the [model zoo](#-model-zoo---dataset--benchmark).
+    ```bash
+    cd Evaluation
+    git lfs install
+    git clone https://huggingface.co/datasets/BAAI/RefSpatial-Bench
+    ```
+
+2. Run the API server as the same as the third step in [Inference](#-inference).
+    ```bash
+    cd API
+    python api.py \
+    --port 25547 \
+    --depth_model_path /your/custom/path/depth_anything_v2_vitl.pth \
+    --vlm_model_path /your/custom/path/to/roborefer
+    ```
+
+3. Run the evaluation script. 
+    - Note that if the `model_name` has `-Depth` in the name, the depth model will be used. Therefore, you can choose `RoboRefer-2B-SFT`, `RoboRefer-2B-SFT-Depth` as the model name for RGB-only or RGB-D inference, respectively.
+    - The `task_name` can be `Location`, `Placement`, `Unseen`, or `all` to evaluate on all tasks.
+
+    ```bash
+    cd Evaluation
+    python test_benchmark.py \
+    --model_name RoboRefer-2B-SFT-Depth \ 
+    --task_name Location \
+    --url http://127.0.0.1:25547
+    ```
+
+4. Summarize the results.
+    - The `model_name` must be the same as the one used in the evaluation script.
+    - The `task_name` can be `Location`, `Placement`, or `Unseen` to summarize the results for the corresponding task.
+
+    ```bash
+    cd Evaluation
+    python summarize_acc.py \
+    --model_name RoboRefer-2B-SFT-Depth \
+    --task_name Location
+    ```
+
+
 ## 🕶️Overview
 
 ### The Overview of RoboRefer
@@ -49,8 +206,8 @@ We present RefSpatial, a dataset can enable general VLMs to adapt to spatial ref
 
 
 ## TODO
-- [ ] Release RefSpatial-Bench evaluation code (About 1 week).
-- [ ] Release the SFT-trained 2B RoboRefer model and inference code (About 2 weeks).
+- [x] Release RefSpatial-Bench evaluation code (About 1 week).
+- [x] Release the SFT-trained 2B RoboRefer model and inference code (About 2 weeks).
 - [ ] Release the SFT-trained 8B RoboRefer model (About 3 weeks).
 - [ ] Release the RefSpatial Dataset and SFT training code (About 1 month).
 - [ ] Release the RFT-trained RoboRefer model and training code (Maybe 2 months or more).
