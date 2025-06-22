@@ -51,9 +51,13 @@
     <td>RoboRefer-8B-Align (Coming soon)</td>
     <td> The 1st SFT step of the 2B model for depth alignment. </td>
   </tr>
-    <tr>
+  <tr>
     <td>RoboRefer-8B-SFT (Coming soon)</td>
     <td> The 2nd SFT step of the 2B model for spatial understanding and referring.</td>
+  </tr>
+  <tr>
+    <td>RoboRefer-2B-RFT (Coming soon)</td>
+    <td> The RFT-trained 2B model for multi-step spatial referring with reasoning.</td>
   </tr>
   <tr>
     <td>RefSpatial Dataset (Coming soon)</td>
