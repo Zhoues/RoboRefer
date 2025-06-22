@@ -11,7 +11,7 @@
   &nbsp;
   <a href="https://huggingface.co/datasets/BAAI/RefSpatial-Bench"><img src="https://img.shields.io/badge/🤗%20Benchmark-RefSpatial--Bench-green.svg" alt="Benchmark"></a>
   &nbsp;
-  <a href="#"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Weights-Stay%20tuned-yellow" alt="Weights"></a>
+  <a href="https://huggingface.co/collections/Zhoues/roborefer-and-refspatial-6857c97848fab02271310b89"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Weights-RoboRefer-yellow" alt="Weights"></a>
 </p>
 
 <br>
@@ -40,7 +40,7 @@
     <th>Note</th>
   </tr>
   <tr>
-    <td><a href="https://huggingface.co/Zhoues/RoboRefer-2B-Depth-Align">RoboRefer-2B-Depth-Align</a></td>
+    <td><a href="https://huggingface.co/Zhoues/RoboRefer-2B-Depth-Align">RoboRefer-2B-Align</a></td>
     <td> The 1st SFT step of the 2B model for depth alignment. </td>
   </tr>
     <tr>
@@ -48,7 +48,7 @@
     <td> The 2nd SFT step of the 2B model for spatial understanding and referring.</td>
   </tr>
   <tr>
-    <td>RoboRefer-8B-Depth-Align (Coming soon)</td>
+    <td>RoboRefer-8B-Align (Coming soon)</td>
     <td> The 1st SFT step of the 2B model for depth alignment. </td>
   </tr>
     <tr>
