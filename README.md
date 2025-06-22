@@ -22,7 +22,10 @@
 
 
 ## 🔥 Updates
-[2025-06-06] 🔥🔥🔥 RefSpatial-Bench is released on [HF](https://huggingface.co/datasets/BAAI/RefSpatial-Bench). Let's evaluate your model's spatial referring ability!
+
+[2025-06-23] 🔥🔥🔥 We release the SFT-trained 2B RoboRefer model and inference code with RefSpatial-Bench evaluation code.
+
+[2025-06-06] RefSpatial-Bench is released on [HF](https://huggingface.co/datasets/BAAI/RefSpatial-Bench). Let's evaluate your model's spatial referring ability!
 
 [2025-06-06] RoboRefer is released on [arxiv](https://arxiv.org/abs/2506.04308) and the project page is set up at [here](https://zhoues.github.io/RoboRefer/).
 
@@ -39,25 +42,25 @@
   </tr>
   <tr>
     <td>RoboRefer-2B-Depth-Align</td>
-    <td><a href="https://huggingface.co/Zhoues/RoboRefer-2B-Depth-Align">roborefer-2b-depth-align-latest</a></td>
-    <td> The sft-step-1 2B model trained for depth alignment. </td>
+    <td><a href="https://huggingface.co/Zhoues/RoboRefer-2B-Depth-Align">2b-depth-align-latest</a></td>
+    <td> The 1st step of the SFT-trained 2B model for depth alignment. </td>
   </tr>
     <tr>
     <td>RoboRefer-2B-SFT</td>
-    <td><a href="https://huggingface.co/Zhoues/RoboRefer-2B-SFT">roborefer-2b-sft-latest</a></td>
-    <td> The sft-step-2 2B model trained for spatial understanding and referring.</td>
+    <td><a href="https://huggingface.co/Zhoues/RoboRefer-2B-SFT">2b-sft-latest</a></td>
+    <td> The 2nd step of the SFT-trained 2B model for spatial understanding and referring.</td>
   </tr>
   <tr>
     <td>RoboRefer-8B-Depth-Align</td>
     <td>Coming soon</td>
-    <!-- <td><a href="https://huggingface.co/Zhoues/RoboRefer-8B-Depth-Align">roborefer-8b-depth-align-latest</a></td> -->
-    <td> The sft-step-1 8B model trained for depth alignment. </td>
+    <!-- <td><a href="https://huggingface.co/Zhoues/RoboRefer-8B-Depth-Align">8b-depth-align-latest</a></td> -->
+    <td> The 1st step of the SFT-trained 2B model for depth alignment. </td>
   </tr>
     <tr>
     <td>RoboRefer-8B-SFT</td>
     <td>Coming soon</td>
-    <!-- <td><a href="https://huggingface.co/Zhoues/RoboRefer-8B-SFT">roborefer-8b-sft-latest</a></td> -->
-    <td> The sft-step-2 8B model trained for spatial understanding and referring.</td>
+    <!-- <td><a href="https://huggingface.co/Zhoues/RoboRefer-8B-SFT">8b-sft-latest</a></td> -->
+    <td> The 2nd step of the SFT-trained 2B model for spatial understanding and referring.</td>
   </tr>
   <tr>
     <td>RefSpatial Dataset</td>
@@ -99,7 +102,7 @@
       --vlm_model_path /your/custom/path/to/roborefer
       ```
 
-4. Run the inference script with the API and Check the results in the `assets` folder.
+4. Run the inference script with the API and check the results in the `assets` folder.
       ```bash
       cd API 
       
@@ -174,7 +177,7 @@ Below are the results of the inference as examples.
 
 4. Summarize the results.
     - The `model_name` must be the same as the one used in the evaluation script.
-    - The `task_name` can be `Location`, `Placement`, or `Unseen` to summarize the results for the corresponding task.
+    - The `task_name` can be `Location`/`Placement`/`Unseen` to summarize the results for the corresponding task.
 
     ```bash
     cd Evaluation
