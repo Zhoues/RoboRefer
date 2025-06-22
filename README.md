@@ -36,40 +36,31 @@
 
 <table>
   <tr>
-    <th>Model/Dataset/Benchmark Name</th>
-    <th>HF Path</th>
+    <th>Model/Dataset/Benchmark</th>
     <th>Note</th>
   </tr>
   <tr>
-    <td>RoboRefer-2B-Depth-Align</td>
-    <td><a href="https://huggingface.co/Zhoues/RoboRefer-2B-Depth-Align">2b-depth-align</a></td>
+    <td><a href="https://huggingface.co/Zhoues/RoboRefer-2B-Depth-Align">RoboRefer-2B-Depth-Align</a></td>
     <td> The 1st SFT step of the 2B model for depth alignment. </td>
   </tr>
     <tr>
-    <td>RoboRefer-2B-SFT</td>
-    <td><a href="https://huggingface.co/Zhoues/RoboRefer-2B-SFT">2b-sft</a></td>
+    <td><a href="https://huggingface.co/Zhoues/RoboRefer-2B-SFT">RoboRefer-2B-SFT</a></td>
     <td> The 2nd SFT step of the 2B model for spatial understanding and referring.</td>
   </tr>
   <tr>
-    <td>RoboRefer-8B-Depth-Align</td>
-    <td>Coming soon</td>
-    <!-- <td><a href="https://huggingface.co/Zhoues/RoboRefer-8B-Depth-Align">8b-depth-align</a></td> -->
+    <td>RoboRefer-8B-Depth-Align (Coming soon)</td>
     <td> The 1st SFT step of the 2B model for depth alignment. </td>
   </tr>
     <tr>
-    <td>RoboRefer-8B-SFT</td>
-    <td>Coming soon</td>
-    <!-- <td><a href="https://huggingface.co/Zhoues/RoboRefer-8B-SFT">8b-sft</a></td> -->
+    <td>RoboRefer-8B-SFT (Coming soon)</td>
     <td> The 2nd SFT step of the 2B model for spatial understanding and referring.</td>
   </tr>
   <tr>
-    <td>RefSpatial Dataset</td>
-    <td>Coming soon</td>
+    <td>RefSpatial Dataset (Coming soon)</td>
     <td> The dataset for spatial understanding and referring with reasoning. </td>
   </tr>
   <tr>
-    <td>RefSpatial-Bench</td>
-    <td><a href="https://huggingface.co/datasets/BAAI/RefSpatial-Bench">refspatial-bench</a></td>
+    <td><a href="https://huggingface.co/datasets/BAAI/RefSpatial-Bench">RefSpatial-Bench</a></td>
     <td> The benchmark for spatial referring with reasoning. </td>
   </tr>
 </table>
@@ -164,7 +155,7 @@ Below are the results of the inference as examples.
     ```
 
 3. Run the evaluation script. 
-    - If the `model_name` has `Depth` in the name, the depth model will be used. Therefore, you can choose `RoboRefer-2B-SFT`, `RoboRefer-2B-SFT-Depth` as the model name for RGB-only or RGB-D inference, respectively.
+    - If the `model_name` has `Depth` in the name, the depth model will be used. Therefore, you can choose `RoboRefer-2B-SFT`, `RoboRefer-2B-SFT-Depth` as the model name for RGB/RGB-D inference, respectively.
     - The `task_name` can be `Location`, `Placement`, `Unseen`, or `all` to evaluate on all tasks.
 
     ```bash
