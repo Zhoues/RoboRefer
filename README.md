@@ -49,11 +49,11 @@
   </tr>
   <tr>
     <td>RoboRefer-8B-Align (Coming soon)</td>
-    <td> The 1st SFT step of the 2B model for depth alignment. </td>
+    <td> The 1st SFT step of the 8B model for depth alignment. </td>
   </tr>
   <tr>
     <td>RoboRefer-8B-SFT (Coming soon)</td>
-    <td> The 2nd SFT step of the 2B model for spatial understanding and referring.</td>
+    <td> The 2nd SFT step of the 8B model for spatial understanding and referring.</td>
   </tr>
   <tr>
     <td>RoboRefer-2B-RFT (Coming soon)</td>
@@ -83,7 +83,7 @@
 
 ## 💡 Inference
 
-1. Download the model weights from the [model zoo](#-model-zoo---dataset--benchmark) (e.g., `roborefer-2b-sft-latest`).
+1. Download the model weights from the [model zoo](#-model-zoo---dataset--benchmark) (e.g., `RoboRefer-2B-SFT`).
 
 2. Download the relative depth estimation model weights (e.g., [`Depth-Anything-V2-Large`](https://huggingface.co/depth-anything/Depth-Anything-V2-Large/resolve/main/depth_anything_v2_vitl.pth?download=true)).
 
