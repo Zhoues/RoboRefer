@@ -25,7 +25,9 @@
 
 ## 🔥 Updates
 
-[2025-06-23] 🔥🔥🔥 We release the SFT-trained 2B RoboRefer model and inference code with RefSpatial-Bench evaluation code.
+[2025-07-01] 🔥🔥🔥 We release the RefSpatial Dataset and SFT training code.
+
+[2025-06-23] We release the SFT-trained 2B RoboRefer model and inference code with RefSpatial-Bench evaluation code.
 
 [2025-06-06] RefSpatial-Bench is released on [HF](https://huggingface.co/datasets/BAAI/RefSpatial-Bench). Let's evaluate your model's spatial referring ability!
 
@@ -43,7 +45,7 @@
   </tr>
   <tr>
     <td><a href="https://huggingface.co/Zhoues/NVILA-2B-Depth">NVILA-2B-Depth</a></td>
-    <td> The base model with depth encoder initialized from image encoder. </td>
+    <td> The base model with depth encoder initialized from the image encoder. </td>
   </tr>
   <tr>
     <td><a href="https://huggingface.co/Zhoues/RoboRefer-2B-Depth-Align">RoboRefer-2B-Align</a></td>
@@ -55,7 +57,7 @@
   </tr>
   <tr>
     <td><a href="https://huggingface.co/Zhoues/NVILA-8B-Depth">NVILA-8B-Depth</a></td>
-    <td> The base model with depth encoder initialized from image encoder. </td>
+    <td> The base model with depth encoder initialized from the image encoder. </td>
   </tr>
   <tr>
     <td>RoboRefer-8B-Align (Coming soon)</td>
@@ -194,38 +196,35 @@ Below are the results of the inference as examples.
 ## 📚 Training
 
 1. Download the RefSpatial-Bench dataset from the [model zoo](#-model-zoo---dataset--benchmark) and decompress the dataset. The provided `unzip_dataset.sh` script could decompress all of the `*.tar.gz` files. Please run it from the `RefSpatial` root directory.
+> [!NOTE]
+> The full raw dataset (~412GB) is in the same format as the LLaVA dataset.
 
       ```bash
       cd RefSpatial
       bash unzip_dataset.sh
       ```
-      <div style="background-color: #eff6ff; border-left: 4px solid #3b82f6; padding: 0.75em 1em; margin-top: 1em; color: #1e3a8a; font-weight: bold; border-radius: 0.375em;">
-        💡 Info: The full raw dataset (~412GB) is the same format as the LLaVA dataset.
-      </div>
-      <br>
+
+
       This script will automatically perform the following actions:
 
       1. **Merge Split Files**: For files that are split into `.part_a`, `.part_b`, etc., the script will use the `cat` command to combine them into a single, complete `.tar.gz` file. For example, `image.tar.gz.part_a`, `...` will be merged into `image.tar.gz`.
       2. **Extract Archives**: The script will then use the `tar` command to extract all `.tar.gz` archives into their current directories.
 
 2. (Optional) Clean Up Archives. If you wish to delete all `.tar.gz` and `.part_*` files after successful decompression to save disk space, you can run:
+> [!Warning]
+> Please run this script only after confirming that all data has been successfully decompressed.
 
     ```bash
     bash delete_tar_gz.sh
     ```
-    <div style="background-color: #ffe4e6; border-left: 4px solid #dc2626; padding: 0.75em 1em; margin-top: 1em; color: #b91c1c; font-weight: bold; border-radius: 0.375em;">
-      ⚠️ Warning: Please run this script only after confirming that all data has been successfully decompressed.
-    </div>
-    <br>
 
 3. Download the RoboRefer base model weights or depth aligned model weights from the [model zoo](#-model-zoo---dataset--benchmark).
 
-4. Add dataset you want to train on in the `register_datasets_mixtures()` function in `RoboRefer/llava/data/datasets_mixture.py`.
-
-    > To use RefSpatial dataset for model training, you need to match the entries of the image and depth path in the JSON files with the decompressed image and depth map files. Below is the mapping of each JSON file to its corresponding image and depth folders.
+4. Add the dataset you want to train on in the `register_datasets_mixtures()` function in `RoboRefer/llava/data/datasets_mixture.py`.
+    > To use the RefSpatial dataset for model training, you need to match the entries of the image and depth path in the JSON files with the decompressed image and depth map files. Below is the mapping of each JSON file to its corresponding image and depth folders.
 
       <details>
-      <summary>JSON to Image and Depth Folder PathMapping</summary>
+      <summary>JSON to Image and Depth Folder Path Mapping </summary>
       <pre><code>{
         "2D": {
           "folder": "RefSpatial/2D",
