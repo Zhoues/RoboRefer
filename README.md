@@ -212,7 +212,8 @@ Download the RefSpatial dataset from the [model zoo](#-model-zoo---dataset--benc
   2. **Extract Archives**: The script will then use the `tar` command to extract all `.tar.gz` archives into their current directories.
 
 ### Step 2 (Optional): Clean up Archives.
-Clean Up Archives. If you wish to delete all `.tar.gz` and `.part_*` files after successful decompression to save disk space, you can run:
+To save disk space, delete all `.tar.gz` and `.part_*` files after successful decompression by running:
+
 > [!Warning]
 > Please run this script only after confirming that all data has been successfully decompressed.
 
@@ -229,7 +230,7 @@ Download the RoboRefer base model weights or depth aligned model weights from th
 
 #### Step 4.1: Add custom datasets (e.g., RefSpatial Dataset)
 
-Add the dataset you want to train on in the `register_datasets_mixtures()` function in `RoboRefer/llava/data/datasets_mixture.py`. We design a flexible `dataset_type` to support both RGB-only and RGB-D training. To train with RGB-D, set the `depth_path` field in the dataset config. For RGB-only training, simply omit the `depth_path`. 
+Add your dataset to the `register_datasets_mixtures()` function in `RoboRefer/llava/data/datasets_mixture.py`. The flexible `dataset_type` named `spatialdataset` supports both RGB-only and RGB-D training. For RGB-D training, set the `depth_path` in the dataset config. For RGB-only, just leave out the `depth_path`.
 
 Below is an example of how to register the RefSpatial dataset for both RGB-only and RGB-D training in the `register_datasets_mixtures()` function in `RoboRefer/llava/data/datasets_mixture.py`. The RefSpatial dataset has already been implemented in its corresponding module.
 
