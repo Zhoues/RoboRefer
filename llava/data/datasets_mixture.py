@@ -55,4 +55,142 @@ def add_dataset(dataset):
 
 
 def register_datasets_mixtures():
-    pass
+
+    ### OpenImage (2D Dataset)
+    2D_choice_qa = Dataset(
+        dataset_name="2D_choice_qa",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/2D/choice_qa.json",
+        image_path="./RefSpatial/2D/image",
+        depth_path="./RefSpatial/2D/depth"
+    )
+    add_dataset(2D_choice_qa)
+
+    2D_choice_qa_RGB = Dataset(
+        dataset_name="2D_choice_qa_RGB",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/2D/choice_qa.json",
+        image_path="./RefSpatial/2D/image"
+    )
+    add_dataset(2D_choice_qa_RGB)
+
+    2D_reasoning_template_qa = Dataset(
+        dataset_name="2D_reasoning_template_qa",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/2D/reasoning_template_qa.json",
+        image_path="./RefSpatial/2D/image",
+        depth_path="./RefSpatial/2D/depth"
+    )
+    add_dataset(2D_reasoning_template_qa)
+
+    2D_reasoning_template_qa_RGB = Dataset(
+        dataset_name="2D_reasoning_template_qa_RGB",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/2D/reasoning_template_qa.json",
+        image_path="./RefSpatial/2D/image"
+    )
+    add_dataset(2D_reasoning_template_qa_RGB)
+
+    ### CA-1M (3D Dataset)
+    3D_choice_qa = Dataset(
+        dataset_name="3D_choice_qa",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/3D/choice_qa.json",
+        image_path="./RefSpatial/3D/image",
+        depth_path="./RefSpatial/3D/depth"
+    )
+    add_dataset(3D_choice_qa)
+
+    3D_choice_qa_RGB = Dataset(
+        dataset_name="3D_choice_qa_RGB",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/3D/choice_qa.json",
+        image_path="./RefSpatial/3D/image"
+    )
+    add_dataset(3D_choice_qa_RGB)
+
+    3D_reasoning_template_qa = Dataset(
+        dataset_name="3D_reasoning_template_qa",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/3D/reasoning_template_qa.json",
+        image_path="./RefSpatial/3D/image",
+        depth_path="./RefSpatial/3D/depth"
+    )
+    add_dataset(3D_reasoning_template_qa)
+
+    3D_reasoning_template_qa_RGB = Dataset(
+        dataset_name="3D_reasoning_template_qa_RGB",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/3D/reasoning_template_qa.json",
+        image_path="./RefSpatial/3D/image"
+    )
+    add_dataset(3D_reasoning_template_qa_RGB)
+
+    3D_vacant_qa = Dataset(
+        dataset_name="3D_vacant_qa",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/3D/vacant_qa.json",
+        image_path="./RefSpatial/3D/image",
+        depth_path="./RefSpatial/3D/depth"
+    )
+    add_dataset(3D_vacant_qa)
+
+    3D_vacant_qa_RGB = Dataset(
+        dataset_name="3D_vacant_qa_RGB",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/3D/vacant_qa.json",
+        image_path="./RefSpatial/3D/image"
+    )
+    add_dataset(3D_vacant_qa_RGB)
+
+    3D_multi_view_qa = Dataset(
+        dataset_name="3D_multi_view_qa",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/3D/multi_view_qa.json",
+        image_path="./RefSpatial/3D/image_multi_view",
+        depth_path="./RefSpatial/3D/depth_multi_view"
+    )
+    add_dataset(3D_multi_view_qa)
+
+    3D_multi_view_qa_RGB = Dataset(
+        dataset_name="3D_multi_view_qa_RGB",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/3D/multi_view_qa.json",
+        image_path="./RefSpatial/3D/image_multi_view"
+    )
+    add_dataset(3D_multi_view_qa_RGB)
+
+    3D_visual_choice_qa = Dataset(
+        dataset_name="3D_visual_choice_qa",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/3D/visual_choice_qa.json",
+        image_path="./RefSpatial/3D/image_visual_choice",
+        depth_path="./RefSpatial/3D/depth"
+    )
+    add_dataset(3D_visual_choice_qa)
+
+    3D_visual_choice_qa_RGB = Dataset(
+        dataset_name="3D_visual_choice_qa_RGB",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/3D/visual_choice_qa.json",
+        image_path="./RefSpatial/3D/image_visual_choice"
+    )
+    add_dataset(3D_visual_choice_qa_RGB)
+
+    ### Simulator (Simulator Dataset)
+    simulation_dataset = Dataset(
+        dataset_name="simulation_dataset",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/Simulator/metadata.json",
+        image_path="./RefSpatial/Simulator/image",
+        depth_path="./RefSpatial/Simulator/depth"
+    )
+    add_dataset(simulation_dataset)
+
+    simulation_dataset_RGB = Dataset(
+        dataset_name="simulation_dataset_RGB",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/Simulator/metadata.json",
+        image_path="./RefSpatial/Simulator/image"
+    )
+    add_dataset(simulation_dataset_RGB)
