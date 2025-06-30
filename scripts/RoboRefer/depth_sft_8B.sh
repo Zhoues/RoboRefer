@@ -3,7 +3,7 @@
 DEFAULT_GLOBAL_TRAIN_BATCH_SIZE=256 # 2(PER_DEVICE_TRAIN_BATCH_SIZE) * 8(GPUS_PER_NODE) * 8(NNODES) * 2(GRADIENT_ACCUMULATION_STEPS)
 DEFAULT_GRADIENT_ACCUMULATION_STEPS=2
 
-STAGE_PATH=${1:-"./runs/train/RoboRefer-8B-Align"} # Your base model path
+STAGE_PATH=${1:-"./runs/train/RoboRefer-8B-Depth-Align"} # Your base model path
 
 # NOTE(Zhouenshen): Add your custom dataset here (e.g., instruction-tuning, REC datasets, etc.)
 DATA_MIXTURE=${2:-"2D_choice_qa+2D_choice_qa_RGB+2D_reasoning_template_qa+2D_reasoning_template_qa_RGB+3D_choice_qa+3D_choice_qa_RGB+3D_reasoning_template_qa+3D_reasoning_template_qa_RGB+3D_vacant_qa+3D_vacant_qa_RGB+3D_multi_view_qa+3D_multi_view_qa_RGB+3D_visual_choice_qa+3D_visual_choice_qa_RGB+simulation_dataset+simulation_dataset_RGB"}

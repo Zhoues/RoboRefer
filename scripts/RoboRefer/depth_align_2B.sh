@@ -5,7 +5,7 @@ DEFAULT_GRADIENT_ACCUMULATION_STEPS=1
 
 STAGE_PATH=${1:-"./NVILA-2B-Depth"} # Your base model path
 DATA_MIXTURE=${2:-"2D_choice_qa+2D_choice_qa_RGB+2D_reasoning_template_qa+2D_reasoning_template_qa_RGB+3D_choice_qa+3D_choice_qa_RGB+3D_reasoning_template_qa+3D_reasoning_template_qa_RGB+3D_vacant_qa+3D_vacant_qa_RGB+3D_multi_view_qa+3D_multi_view_qa_RGB+3D_visual_choice_qa+3D_visual_choice_qa_RGB+simulation_dataset+simulation_dataset_RGB"}
-OUTPUT_DIR=${3:-"runs/train/RoboRefer-2B-Align"}
+OUTPUT_DIR=${3:-"runs/train/RoboRefer-2B-Depth-Align"}
 
 source scripts/setups/train.sh
 

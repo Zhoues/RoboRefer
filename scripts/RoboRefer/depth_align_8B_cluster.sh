@@ -3,7 +3,7 @@
 export PYTHONPATH=$(pwd)
 export WANDB_MODE=offline
 
-export BASE_RUN_NAME="Align"
+export BASE_RUN_NAME="Depth-Align"
 export STAGE_PATH="./NVILA-8B-Depth"  # Your base model path
 export DATA_MIXTURE="2D_choice_qa+2D_choice_qa_RGB+2D_reasoning_template_qa+2D_reasoning_template_qa_RGB+3D_choice_qa+3D_choice_qa_RGB+3D_reasoning_template_qa+3D_reasoning_template_qa_RGB+3D_vacant_qa+3D_vacant_qa_RGB+3D_multi_view_qa+3D_multi_view_qa_RGB+3D_visual_choice_qa+3D_visual_choice_qa_RGB+simulation_dataset+simulation_dataset_RGB"
 

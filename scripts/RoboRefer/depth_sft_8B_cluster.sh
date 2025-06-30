@@ -4,7 +4,7 @@ export PYTHONPATH=$(pwd)
 export WANDB_MODE=offline
 
 export BASE_RUN_NAME="SFT"
-export STAGE_PATH="./runs/train/RoboRefer-8B-Align"  # Your base model path
+export STAGE_PATH="./runs/train/RoboRefer-8B-Depth-Align"  # Your base model path
 
 # NOTE(Zhouenshen): Add your custom dataset here (e.g., instruction-tuning, REC datasets, etc.)
 export DATA_MIXTURE="2D_choice_qa+2D_choice_qa_RGB+2D_reasoning_template_qa+2D_reasoning_template_qa_RGB+3D_choice_qa+3D_choice_qa_RGB+3D_reasoning_template_qa+3D_reasoning_template_qa_RGB+3D_vacant_qa+3D_vacant_qa_RGB+3D_multi_view_qa+3D_multi_view_qa_RGB+3D_visual_choice_qa+3D_visual_choice_qa_RGB+simulation_dataset+simulation_dataset_RGB"
