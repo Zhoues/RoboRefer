@@ -195,248 +195,200 @@ Below are the results of the inference as examples.
 
 ## 📚 Training
 
-1. Download the RefSpatial dataset from the [model zoo](#-model-zoo---dataset--benchmark) and extract it by running the provided `unzip_dataset.sh` from the RefSpatial root directory to decompress all of the `*.tar.gz` files.
+### Step 1: Download RefSpatial Dataset.
+Download the RefSpatial dataset from the [model zoo](#-model-zoo---dataset--benchmark) and extract it by running the provided `unzip_dataset.sh` from the RefSpatial root directory to decompress all of the `*.tar.gz` files.
 > [!NOTE]
 > The full raw dataset (~412GB) is in the same format as the LLaVA dataset.
 
-      ```bash
-      cd RefSpatial
-      bash unzip_dataset.sh
-      ```
+  ```bash
+  cd RefSpatial
+  bash unzip_dataset.sh
+  ```
 
 
-      This script will automatically perform the following actions:
+  This script will automatically perform the following actions:
 
-      1. **Merge Split Files**: For files that are split into `.part_a`, `.part_b`, etc., the script will use the `cat` command to combine them into a single, complete `.tar.gz` file. For example, `image.tar.gz.part_a`, `...` will be merged into `image.tar.gz`.
-      2. **Extract Archives**: The script will then use the `tar` command to extract all `.tar.gz` archives into their current directories.
+  1. **Merge Split Files**: For files that are split into `.part_a`, `.part_b`, etc., the script will use the `cat` command to combine them into a single, complete `.tar.gz` file. For example, `image.tar.gz.part_a`, `...` will be merged into `image.tar.gz`.
+  2. **Extract Archives**: The script will then use the `tar` command to extract all `.tar.gz` archives into their current directories.
 
-2. (Optional) Clean Up Archives. If you wish to delete all `.tar.gz` and `.part_*` files after successful decompression to save disk space, you can run:
+### Step 2 (Optional): Clean up Archives.
+Clean Up Archives. If you wish to delete all `.tar.gz` and `.part_*` files after successful decompression to save disk space, you can run:
 > [!Warning]
 > Please run this script only after confirming that all data has been successfully decompressed.
 
-    ```bash
-    bash delete_tar_gz.sh
-    ```
+```bash
+bash delete_tar_gz.sh
+```
 
-3. Download the RoboRefer base model weights or depth aligned model weights from the [model zoo](#-model-zoo---dataset--benchmark).
+### Step 3: Download base model weights.
+Download the RoboRefer base model weights or depth aligned model weights from the [model zoo](#-model-zoo---dataset--benchmark).
 
-4. Add the dataset you want to train on in the `register_datasets_mixtures()` function in `RoboRefer/llava/data/datasets_mixture.py`.
-    > To use the RefSpatial dataset for model training, you need to match the entries of the image and depth path in the JSON files with the decompressed image and depth map files. Below is the mapping of each JSON file to its corresponding image and depth folders.
 
-      <details>
-      <summary>JSON to Image and Depth Folder Path Mapping </summary>
-      <pre><code>{
-        "2D": {
-          "folder": "RefSpatial/2D",
-          "jsons": {
-            "choice_qa.json": {
-              "image_root": "RefSpatial/2D/image",
-              "depth_root": "RefSpatial/2D/depth"
-            },
-            "reasoning_template_qa.json": {
-              "image_root": "RefSpatial/2D/image",
-              "depth_root": "RefSpatial/2D/depth"
-            }
-          }
-        },
-        "3D": {
-          "folder": "RefSpatial/3D",
-          "jsons": {
-            "choice_qa.json": {
-              "depth_root": "RefSpatial/3D/depth",
-              "image_root": "RefSpatial/3D/image"
-            },
-            "multi_view_qa.json": {
-              "depth_root": "RefSpatial/3D/depth_multi_view",
-              "image_root": "RefSpatial/3D/image_multi_view"
-            },
-            "reasoning_template_qa.json": {
-              "depth_root": "RefSpatial/3D/depth",
-              "image_root": "RefSpatial/3D/image"
-            },
-            "vacant_qa.json": {
-              "depth_root": "RefSpatial/3D/depth",
-              "image_root": "RefSpatial/3D/image"
-            },
-            "visual_choice_qa.json": {
-              "depth_root": "RefSpatial/3D/depth",
-              "image_root": "RefSpatial/3D/image_visual_choice"
-            }
-          }
-        },
-        "Simulator": {
-          "folder": "RefSpatial/Simulator",
-          "jsons": {
-            "metadata.json": {
-              "image_root": "RefSpatial/Simulator/image",
-              "depth_root": "RefSpatial/Simulator/depth"
-            }
-          }
-        }
-      }
-      </code></pre>
+### Step 4: Train the model.
 
-      </details>
 
-    <br>
+#### Step 4.1: Add custom datasets (e.g., RefSpatial Dataset)
 
-    4.1. We designed a flexible `dataset_type` to support both RGB-only and RGB-D training. To train with RGB-D, set the `depth_path` field in the dataset config. For RGB-only training, simply omit the `depth_path`. Below is an example of how to register the RefSpatial dataset for both RGB-only and RGB-D training in the `register_datasets_mixtures()` function in `RoboRefer/llava/data/datasets_mixture.py`. The RefSpatial dataset has already been implemented in its corresponding module.
-      <details>
-      <summary>Example of Adding RefSpatial Dataset</summary>
-      <pre><code>
-      def register_datasets_mixtures():
+Add the dataset you want to train on in the `register_datasets_mixtures()` function in `RoboRefer/llava/data/datasets_mixture.py`. We design a flexible `dataset_type` to support both RGB-only and RGB-D training. To train with RGB-D, set the `depth_path` field in the dataset config. For RGB-only training, simply omit the `depth_path`. 
 
-          ### OpenImage (2D Dataset)
-          2D_choice_qa = Dataset(
-              dataset_name="2D_choice_qa",
-              dataset_type="spatialdataset",
-              data_path="./RefSpatial/2D/choice_qa.json",
-              image_path="./RefSpatial/2D/image",
-              depth_path="./RefSpatial/2D/depth"
-          )
-          add_dataset(2D_choice_qa)
+Below is an example of how to register the RefSpatial dataset for both RGB-only and RGB-D training in the `register_datasets_mixtures()` function in `RoboRefer/llava/data/datasets_mixture.py`. The RefSpatial dataset has already been implemented in its corresponding module.
 
-          2D_choice_qa_RGB = Dataset(
-              dataset_name="2D_choice_qa_RGB",
-              dataset_type="spatialdataset",
-              data_path="./RefSpatial/2D/choice_qa.json",
-              image_path="./RefSpatial/2D/image"
-          )
-          add_dataset(2D_choice_qa_RGB)
+<details>
+<summary>Example of Adding RefSpatial Dataset</summary>
+<pre><code>
+def register_datasets_mixtures():
 
-          2D_reasoning_template_qa = Dataset(
-              dataset_name="2D_reasoning_template_qa",
-              dataset_type="spatialdataset",
-              data_path="./RefSpatial/2D/reasoning_template_qa.json",
-              image_path="./RefSpatial/2D/image",
-              depth_path="./RefSpatial/2D/depth"
-          )
-          add_dataset(2D_reasoning_template_qa)
+    ### OpenImage (2D Dataset)
+    2D_choice_qa = Dataset(
+        dataset_name="2D_choice_qa",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/2D/choice_qa.json",
+        image_path="./RefSpatial/2D/image",
+        depth_path="./RefSpatial/2D/depth"
+    )
+    add_dataset(2D_choice_qa)
 
-          2D_reasoning_template_qa_RGB = Dataset(
-              dataset_name="2D_reasoning_template_qa_RGB",
-              dataset_type="spatialdataset",
-              data_path="./RefSpatial/2D/reasoning_template_qa.json",
-              image_path="./RefSpatial/2D/image"
-          )
-          add_dataset(2D_reasoning_template_qa_RGB)
+    2D_choice_qa_RGB = Dataset(
+        dataset_name="2D_choice_qa_RGB",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/2D/choice_qa.json",
+        image_path="./RefSpatial/2D/image"
+    )
+    add_dataset(2D_choice_qa_RGB)
 
-          ### CA-1M (3D Dataset)
-          3D_choice_qa = Dataset(
-              dataset_name="3D_choice_qa",
-              dataset_type="spatialdataset",
-              data_path="./RefSpatial/3D/choice_qa.json",
-              image_path="./RefSpatial/3D/image",
-              depth_path="./RefSpatial/3D/depth"
-          )
-          add_dataset(3D_choice_qa)
+    2D_reasoning_template_qa = Dataset(
+        dataset_name="2D_reasoning_template_qa",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/2D/reasoning_template_qa.json",
+        image_path="./RefSpatial/2D/image",
+        depth_path="./RefSpatial/2D/depth"
+    )
+    add_dataset(2D_reasoning_template_qa)
 
-          3D_choice_qa_RGB = Dataset(
-              dataset_name="3D_choice_qa_RGB",
-              dataset_type="spatialdataset",
-              data_path="./RefSpatial/3D/choice_qa.json",
-              image_path="./RefSpatial/3D/image"
-          )
-          add_dataset(3D_choice_qa_RGB)
+    2D_reasoning_template_qa_RGB = Dataset(
+        dataset_name="2D_reasoning_template_qa_RGB",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/2D/reasoning_template_qa.json",
+        image_path="./RefSpatial/2D/image"
+    )
+    add_dataset(2D_reasoning_template_qa_RGB)
 
-          3D_reasoning_template_qa = Dataset(
-              dataset_name="3D_reasoning_template_qa",
-              dataset_type="spatialdataset",
-              data_path="./RefSpatial/3D/reasoning_template_qa.json",
-              image_path="./RefSpatial/3D/image",
-              depth_path="./RefSpatial/3D/depth"
-          )
-          add_dataset(3D_reasoning_template_qa)
+    ### CA-1M (3D Dataset)
+    3D_choice_qa = Dataset(
+        dataset_name="3D_choice_qa",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/3D/choice_qa.json",
+        image_path="./RefSpatial/3D/image",
+        depth_path="./RefSpatial/3D/depth"
+    )
+    add_dataset(3D_choice_qa)
 
-          3D_reasoning_template_qa_RGB = Dataset(
-              dataset_name="3D_reasoning_template_qa_RGB",
-              dataset_type="spatialdataset",
-              data_path="./RefSpatial/3D/reasoning_template_qa.json",
-              image_path="./RefSpatial/3D/image"
-          )
-          add_dataset(3D_reasoning_template_qa_RGB)
+    3D_choice_qa_RGB = Dataset(
+        dataset_name="3D_choice_qa_RGB",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/3D/choice_qa.json",
+        image_path="./RefSpatial/3D/image"
+    )
+    add_dataset(3D_choice_qa_RGB)
 
-          3D_vacant_qa = Dataset(
-              dataset_name="3D_vacant_qa",
-              dataset_type="spatialdataset",
-              data_path="./RefSpatial/3D/vacant_qa.json",
-              image_path="./RefSpatial/3D/image",
-              depth_path="./RefSpatial/3D/depth"
-          )
-          add_dataset(3D_vacant_qa)
+    3D_reasoning_template_qa = Dataset(
+        dataset_name="3D_reasoning_template_qa",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/3D/reasoning_template_qa.json",
+        image_path="./RefSpatial/3D/image",
+        depth_path="./RefSpatial/3D/depth"
+    )
+    add_dataset(3D_reasoning_template_qa)
 
-          3D_vacant_qa_RGB = Dataset(
-              dataset_name="3D_vacant_qa_RGB",
-              dataset_type="spatialdataset",
-              data_path="./RefSpatial/3D/vacant_qa.json",
-              image_path="./RefSpatial/3D/image"
-          )
-          add_dataset(3D_vacant_qa_RGB)
+    3D_reasoning_template_qa_RGB = Dataset(
+        dataset_name="3D_reasoning_template_qa_RGB",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/3D/reasoning_template_qa.json",
+        image_path="./RefSpatial/3D/image"
+    )
+    add_dataset(3D_reasoning_template_qa_RGB)
 
-          3D_multi_view_qa = Dataset(
-              dataset_name="3D_multi_view_qa",
-              dataset_type="spatialdataset",
-              data_path="./RefSpatial/3D/multi_view_qa.json",
-              image_path="./RefSpatial/3D/image_multi_view",
-              depth_path="./RefSpatial/3D/depth_multi_view"
-          )
-          add_dataset(3D_multi_view_qa)
+    3D_vacant_qa = Dataset(
+        dataset_name="3D_vacant_qa",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/3D/vacant_qa.json",
+        image_path="./RefSpatial/3D/image",
+        depth_path="./RefSpatial/3D/depth"
+    )
+    add_dataset(3D_vacant_qa)
 
-          3D_multi_view_qa_RGB = Dataset(
-              dataset_name="3D_multi_view_qa_RGB",
-              dataset_type="spatialdataset",
-              data_path="./RefSpatial/3D/multi_view_qa.json",
-              image_path="./RefSpatial/3D/image_multi_view"
-          )
-          add_dataset(3D_multi_view_qa_RGB)
+    3D_vacant_qa_RGB = Dataset(
+        dataset_name="3D_vacant_qa_RGB",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/3D/vacant_qa.json",
+        image_path="./RefSpatial/3D/image"
+    )
+    add_dataset(3D_vacant_qa_RGB)
 
-          3D_visual_choice_qa = Dataset(
-              dataset_name="3D_visual_choice_qa",
-              dataset_type="spatialdataset",
-              data_path="./RefSpatial/3D/visual_choice_qa.json",
-              image_path="./RefSpatial/3D/image_visual_choice",
-              depth_path="./RefSpatial/3D/depth"
-          )
-          add_dataset(3D_visual_choice_qa)
+    3D_multi_view_qa = Dataset(
+        dataset_name="3D_multi_view_qa",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/3D/multi_view_qa.json",
+        image_path="./RefSpatial/3D/image_multi_view",
+        depth_path="./RefSpatial/3D/depth_multi_view"
+    )
+    add_dataset(3D_multi_view_qa)
 
-          3D_visual_choice_qa_RGB = Dataset(
-              dataset_name="3D_visual_choice_qa_RGB",
-              dataset_type="spatialdataset",
-              data_path="./RefSpatial/3D/visual_choice_qa.json",
-              image_path="./RefSpatial/3D/image_visual_choice"
-          )
-          add_dataset(3D_visual_choice_qa_RGB)
+    3D_multi_view_qa_RGB = Dataset(
+        dataset_name="3D_multi_view_qa_RGB",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/3D/multi_view_qa.json",
+        image_path="./RefSpatial/3D/image_multi_view"
+    )
+    add_dataset(3D_multi_view_qa_RGB)
 
-          ### Simulator (Simulator Dataset)
-          simulation_dataset = Dataset(
-              dataset_name="simulation_dataset",
-              dataset_type="spatialdataset",
-              data_path="./RefSpatial/Simulator/metadata.json",
-              image_path="./RefSpatial/Simulator/image",
-              depth_path="./RefSpatial/Simulator/depth"
-          )
-          add_dataset(simulation_dataset)
+    3D_visual_choice_qa = Dataset(
+        dataset_name="3D_visual_choice_qa",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/3D/visual_choice_qa.json",
+        image_path="./RefSpatial/3D/image_visual_choice",
+        depth_path="./RefSpatial/3D/depth"
+    )
+    add_dataset(3D_visual_choice_qa)
 
-          simulation_dataset_RGB = Dataset(
-              dataset_name="simulation_dataset_RGB",
-              dataset_type="spatialdataset",
-              data_path="./RefSpatial/Simulator/metadata.json",
-              image_path="./RefSpatial/Simulator/image"
-          )
-          add_dataset(simulation_dataset_RGB)
-      </code></pre>
+    3D_visual_choice_qa_RGB = Dataset(
+        dataset_name="3D_visual_choice_qa_RGB",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/3D/visual_choice_qa.json",
+        image_path="./RefSpatial/3D/image_visual_choice"
+    )
+    add_dataset(3D_visual_choice_qa_RGB)
 
-      </details>
+    ### Simulator (Simulator Dataset)
+    simulation_dataset = Dataset(
+        dataset_name="simulation_dataset",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/Simulator/metadata.json",
+        image_path="./RefSpatial/Simulator/image",
+        depth_path="./RefSpatial/Simulator/depth"
+    )
+    add_dataset(simulation_dataset)
 
-    <br>
-    
-    4.2.  In `scripts/RoboRefer`, we provide scripts for depth alignment, SFT training, and RFT training (coming soon). You can run them using the commands below. Be sure to update the base model path and add your custom dataset(s) in the script. After registering your datasets in `register_datasets_mixtures()`, you can use `+` to include multiple datasets.
+    simulation_dataset_RGB = Dataset(
+        dataset_name="simulation_dataset_RGB",
+        dataset_type="spatialdataset",
+        data_path="./RefSpatial/Simulator/metadata.json",
+        image_path="./RefSpatial/Simulator/image"
+    )
+    add_dataset(simulation_dataset_RGB)
+</code></pre>
 
-    ```bash
-    bash scripts/roborefer/depth_align_2B.sh # or bash scripts/roborefer/depth_align_2B_cluster.sh. If your use cluster for training, you can run this script. 8B variant is the same.
+</details>
 
-    bash scripts/roborefer/depth_sft_2B.sh # or bash scripts/roborefer/depth_sft_2B_cluster.sh. If your use cluster for training, you can run this script. 8B variant is the same.
-    ```
+
+#### Step 4.2: Use scripts to start training
+In `scripts/RoboRefer`, we provide scripts for depth alignment, SFT training, and RFT training (coming soon). You can run them using the commands below. Be sure to update the base model path and add your custom dataset(s) in the script. After registering your datasets in `register_datasets_mixtures()`, you can use `+` to include multiple datasets.
+
+```bash
+bash scripts/roborefer/depth_align_2B.sh # or bash scripts/roborefer/depth_align_2B_cluster.sh. If you use a cluster for training, you can run this script. 8B variant is the same.
+
+bash scripts/roborefer/depth_sft_2B.sh # or bash scripts/roborefer/depth_sft_2B_cluster.sh. If you use a cluster for training, you can run this script. 8B variant is the same.
+```
     
 
 ## 🕶️Overview
