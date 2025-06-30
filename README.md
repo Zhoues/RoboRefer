@@ -9,7 +9,7 @@
   &nbsp;
   <a href="https://zhoues.github.io/RoboRefer/"><img src="https://img.shields.io/badge/%F0%9F%8F%A0%20Project-Homepage-blue" alt="Project Homepage"></a>
   &nbsp;
-  <a href="https://huggingface.co/datasets/JingkunAn/RefSpatial"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-RefSpatial%20Dataset-brightgreen" alt="Dataset"></a>
+  <a href="https://huggingface.co/datasets/JingkunAn/RefSpatial"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-RefSpatial--Dataset-brightgreen" alt="Dataset"></a>
   &nbsp;
   <a href="https://huggingface.co/datasets/BAAI/RefSpatial-Bench"><img src="https://img.shields.io/badge/🤗%20Benchmark-RefSpatial--Bench-green.svg" alt="Benchmark"></a>
   &nbsp;
