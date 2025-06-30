@@ -195,7 +195,7 @@ Below are the results of the inference as examples.
 
 ## 📚 Training
 
-1. Download the RefSpatial dataset from the [model zoo](#-model-zoo---dataset--benchmark) and decompress the dataset. The provided `unzip_dataset.sh` script could decompress all of the `*.tar.gz` files. Please run it from the `RefSpatial` root directory.
+1. Download the RefSpatial dataset from the [model zoo](#-model-zoo---dataset--benchmark) and extract it by running the provided `unzip_dataset.sh` from the RefSpatial root directory to decompress all of the `*.tar.gz` files.
 > [!NOTE]
 > The full raw dataset (~412GB) is in the same format as the LLaVA dataset.
 
