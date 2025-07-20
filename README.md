@@ -3,6 +3,9 @@
 
 <h3 align="center">From words to exactly where you mean — with RoboRefer</h3>
 
+< img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fzhoues.github.io&labelColor=%232ccce4&countColor=%230158f9" alt="visitor badge" style="display: none;"/>
+< img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fanjingkun.github.io&labelColor=%232ccce4&countColor=%230158f9" alt="visitor badge" style="display: none;" />
+
 
 <p align="center">
   <a href="https://arxiv.org/abs/2506.04308"><img src="https://img.shields.io/badge/arXiv-2506.04308-b31b1b.svg?logo=arxiv" alt="arXiv"></a>
