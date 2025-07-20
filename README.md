@@ -16,9 +16,6 @@
   <a href="https://huggingface.co/collections/Zhoues/roborefer-and-refspatial-6857c97848fab02271310b89"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Weights-RoboRefer-yellow" alt="Weights"></a>
 </p>
 
-<p align="center">
- <img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fzhoues.github.io&labelColor=%232ccce4&countColor=%230158f9" alt="visitor badge" style="display: none;" />
-</p>
 
 <div style="text-align: center; background-color: white;">
     <img src="assets/motivation.png" width=100% >
