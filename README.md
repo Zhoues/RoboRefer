@@ -145,14 +145,14 @@
 
       python use_api.py \
       --image_path ../assets/outdoor_3.png \
-      --prompt "Please point to the third car in the row closest to the viewer, from right to left" \
+      --prompt "Point to the third car in the row closest to the viewer, from right to left" \
       --output_path ../assets/my_outdoor_result_3.png \
       --url http://127.0.0.1:25547
 
 
       python use_api.py \
       --image_path ../assets/outdoor_3.png \
-      --prompt "Please point to the brown car in the row closest to the viewer" \
+      --prompt "Point to the brown car in the row closest to the viewer" \
       --output_path ../assets/my_outdoor_result_4.png \
       --url http://127.0.0.1:25547
 
@@ -203,8 +203,8 @@ Below are the results of the inference as examples (tabletop scenes and outdoor 
 <table>
   <tr>
     <th>Original Image</th>
-    <th>"Please point to the third car in the row closest to the viewer, from right to left"</th>
-    <th>"Please point to the brown car in the row closest to the viewer"</th>
+    <th>"Point to the third car in the row closest to the viewer, from right to left"</th>
+    <th>"Point to the brown car in the row closest to the viewer"</th>
   </tr>
   <tr>
     <td><img src="assets/outdoor_3.png" width=100% ></td>
