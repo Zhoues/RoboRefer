@@ -9,7 +9,7 @@ from PIL import Image
 import cv2
 
 def denormalize_and_mark(image_path, normalized_points, output_path="output.jpg",
-                         color=(244, 133, 66), radius=8, border_color=(255, 255, 255), border_thickness=2):
+                         color=(244, 133, 66), radius=12, border_color=(255, 255, 255), border_thickness=2):
     """
     Denormalizes normalized points and marks them on the image with a colored circle and white border.
     
