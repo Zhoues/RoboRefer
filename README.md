@@ -24,7 +24,9 @@
 
 ## 🔥 Updates
 
-[2025-07-01] 🔥🔥🔥 We release the RefSpatial Dataset and SFT training code.
+[2025-07-29] 🔥🔥🔥 We release the SFT-trained 8B model and test examples of outdoor scenes.
+
+[2025-07-01] We release the RefSpatial Dataset and SFT training code.
 
 [2025-06-23] We release the SFT-trained 2B model and inference code with RefSpatial-Bench evaluation code.
 
@@ -59,11 +61,7 @@
     <td> The base model with depth encoder initialized from the image encoder. </td>
   </tr>
   <tr>
-    <td>RoboRefer-8B-Align (Coming soon)</td>
-    <td> The 1st SFT step of the 8B model for depth alignment. </td>
-  </tr>
-  <tr>
-    <td>RoboRefer-8B-SFT (Coming soon)</td>
+    <td><a href="https://huggingface.co/Zhoues/RoboRefer-8B-SFT">RoboRefer-8B-SFT</a></td>
     <td> The 2nd SFT step of the 8B model for spatial understanding and referring.</td>
   </tr>
   <tr>
