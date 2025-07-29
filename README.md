@@ -110,26 +110,58 @@
       ```bash
       cd API 
       
+      ## Tabletop scenes
       python use_api.py \
-      --image_path ../assets/test.jpg \
+      --image_path ../assets/tabletop.jpg \
       --prompt "Pick the apple in front of the logo side of the leftmost cup." \
-      --output_path ../assets/my_result_1.jpg \
+      --output_path ../assets/my_tabletop_result_1.jpg \
       --url http://127.0.0.1:25547
 
       python use_api.py \
-      --image_path ../assets/test.jpg \
+      --image_path ../assets/tabletop.jpg \
       --prompt "Point out the apple nearest to the second cup from left to right." \
-      --output_path ../assets/my_result_2.jpg \
+      --output_path ../assets/my_tabletop_result_2.jpg \
       --url http://127.0.0.1:25547
 
       python use_api.py \
-      --image_path ../assets/test.jpg \
+      --image_path ../assets/tabletop.jpg \
       --prompt "Point to the free area between the farthest apple and pink cake." \
-      --output_path ../assets/my_result_3.jpg \
+      --output_path ../assets/my_tabletop_result_3.jpg \
       --url http://127.0.0.1:25547
+
+      ## Outdoor scenes
+      python use_api.py \
+      --image_path ../assets/outdoor_1.jpg \
+      --prompt "Point to the free area between the black vehicle on the right and the white sedan in front of it." \
+      --output_path ../assets/my_outdoor_result_1.jpg \
+      --url http://127.0.0.1:25547
+
+      python use_api.py \
+      --image_path ../assets/outdoor_2.png \
+      --prompt "Point to the free area between the first black vehicle and the second black vehicle from left to right." \
+      --output_path ../assets/my_outdoor_result_2.png \
+      --url http://127.0.0.1:25547
+
+
+      python use_api.py \
+      --image_path ../assets/outdoor_3.png \
+      --prompt "Please point to the third car in the row closest to the viewer, from right to left" \
+      --output_path ../assets/my_outdoor_result_3.png \
+      --url http://127.0.0.1:25547
+
+
+      python use_api.py \
+      --image_path ../assets/outdoor_3.png \
+      --prompt "Please point to the brown car in the row closest to the viewer" \
+      --output_path ../assets/my_outdoor_result_4.png \
+      --url http://127.0.0.1:25547
+
+
+      
+
       ```
 
-Below are the results of the inference as examples.
+Below are the results of the inference as examples (tabletop scenes and outdoor scenes).
 
 <table>
   <tr>
@@ -139,12 +171,47 @@ Below are the results of the inference as examples.
     <th>"Point to the free area between the farthest apple and pink cake."</th>
   </tr>
   <tr>
-    <td><img src="assets/test.jpg" width=100% ></td>
-    <td><img src="assets/test_result_1.jpg" width=100% ></td>
-    <td><img src="assets/test_result_2.jpg" width=100% ></td>
-    <td><img src="assets/test_result_3.jpg" width=100% ></td>
+    <td><img src="assets/tabletop.jpg" width=100% ></td>
+    <td><img src="assets/tabletop_result_1.jpg" width=100% ></td>
+    <td><img src="assets/tabletop_result_2.jpg" width=100% ></td>
+    <td><img src="assets/tabletop_result_3.jpg" width=100% ></td>
+
 </table>
 
+<table>
+  <tr>
+    <th>Original Image</th>
+    <th>"Point to the free area between the black vehicle on the right and the white sedan in front of it."</th>
+  </tr>
+  <tr>
+    <td><img src="assets/outdoor_1.jpg" width=100% ></td>
+    <td><img src="assets/outdoor_result_1.jpg" width=100% ></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Original Image</th>
+    <th>"Point to the free area between the black vehicle on the right and the white sedan in front of it."</th>
+  </tr>
+  <tr>
+    <td><img src="assets/outdoor_2.png" width=100% ></td>
+    <td><img src="assets/outdoor_result_2.png" width=100% ></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Original Image</th>
+    <th>"Please point to the third car in the row closest to the viewer, from right to left"</th>
+    <th>"Please point to the brown car in the row closest to the viewer"</th>
+  </tr>
+  <tr>
+    <td><img src="assets/outdoor_3.png" width=100% ></td>
+    <td><img src="assets/outdoor_result_3.png" width=100% ></td>
+    <td><img src="assets/outdoor_result_4.png" width=100% ></td>
+  </tr>
+</table>
 
 
 
