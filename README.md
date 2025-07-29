@@ -474,7 +474,7 @@ We present RefSpatial, a dataset can enable general VLMs to adapt to spatial ref
 ## TODO
 - [x] Release RefSpatial-Bench evaluation code (About 1 week).
 - [x] Release the SFT-trained 2B RoboRefer model and inference code (About 2 weeks).
-- [ ] Release the SFT-trained 8B RoboRefer model (About 3 weeks).
+- [x] Release the SFT-trained 8B RoboRefer model (About 3 weeks).
 - [x] Release the RefSpatial Dataset and SFT training code (About 1 month).
 - [ ] Release the RFT-trained RoboRefer model and training code (Maybe 2 months or more).
 - [ ] Release the Dataset Generation Pipeline (Maybe 2 months or more).
