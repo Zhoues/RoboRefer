@@ -142,13 +142,11 @@
       --output_path ../assets/my_outdoor_result_2.png \
       --url http://127.0.0.1:25547
 
-
       python use_api.py \
       --image_path ../assets/outdoor_3.png \
       --prompt "Point to the third car in the row closest to the viewer, from right to left" \
       --output_path ../assets/my_outdoor_result_3.png \
       --url http://127.0.0.1:25547
-
 
       python use_api.py \
       --image_path ../assets/outdoor_3.png \
