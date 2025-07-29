@@ -155,10 +155,6 @@
       --prompt "Point to the brown car in the row closest to the viewer" \
       --output_path ../assets/my_outdoor_result_4.png \
       --url http://127.0.0.1:25547
-
-
-      
-
       ```
 
 Below are the results of the inference as examples (tabletop scenes and outdoor scenes).
