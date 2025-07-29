@@ -186,7 +186,7 @@ Below are the results of the inference as examples (tabletop scenes and outdoor 
 <table>
   <tr>
     <th>Original Image</th>
-    <th>"Point to the free area between the black vehicle on the right and the white sedan in front of it."</th>
+    <th>"Point to the free area between the first black vehicle and the second black vehicle from left to right."</th>
   </tr>
   <tr>
     <td><img src="assets/outdoor_2.png" width=100% ></td>
