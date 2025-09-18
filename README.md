@@ -24,7 +24,9 @@
 
 ## 🔥 Updates
 
-[2025-07-29] 🔥🔥🔥 We release the SFT-trained 8B model and test examples of outdoor scenes.
+[2025-09-18] 🔥🔥🔥 RoboRefer gets accepted to NeurIPS 2025! See you in Mexico City and San Diego, USA!
+
+[2025-07-29] We release the SFT-trained 8B model and test examples of outdoor scenes.
 
 [2025-07-01] We release the RefSpatial Dataset and SFT training code.
 
