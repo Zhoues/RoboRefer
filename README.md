@@ -24,6 +24,22 @@
 
 ## 🔥 Updates
 
+[2025-09-18] 🔥🔥🔥 RefSpatial-Bench is now used by [Qwen3-VL](https://github.com/QwenLM/Qwen3-VL) and [Gemini-Robotics-1.5](https://deepmind.google/discover/blog/gemini-robotics-15-brings-ai-agents-into-the-physical-world/) to evaluate spatial reasoning in complex embodied scenarios! Come on, test your model with RefSpatial-Bench!
+
+<table>
+  <tr>
+    <th>Qwen3-VL Results</th>
+    <th>Gemini-Robotics-1.5 Results</th>
+  </tr>
+  <tr>
+    <td><img width="1749" height="747" alt="Qwen-3-VL" src="https://github.com/user-attachments/assets/852d42fb-76b4-40b7-81ba-577040d62fac" /></td>
+    <td><img width="1420" height="787" alt="Gemini-Robotics-1 5-2" src="https://github.com/user-attachments/assets/f7529979-36e0-4d83-946c-882b4ac69e69" /></td>
+
+
+</table>
+
+
+
 [2025-09-18] 🔥🔥🔥 RoboRefer gets accepted to NeurIPS 2025! See you in Mexico City and San Diego, USA!
 
 [2025-07-29] We release the SFT-trained 8B model and test examples of outdoor scenes.
