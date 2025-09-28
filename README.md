@@ -126,9 +126,7 @@
 
 4. Run the inference script with the API and check the results in the `assets` folder.
 > [!NOTE]
-> RoboRefer natively supports RGB-only input and RGB-D input, as it was trained using a mix of RGB and RGB-D data.
-> There's no need to worry if you don't have depth data, because our depth is inferred from RGB images using DepthAnything V2 (when `enable_depth=1`).
-> Just simply set `enable_depth` to 0 or 1 in `use_api.py` for your settings. https://github.com/Zhoues/RoboRefer/blob/15f93d48c1e205d954eeb8de989cdae3cef7abbb/API/use_api.py#L61
+> RoboRefer natively supports both RGB and RGB-D inputs. If you don't have depth data, it can be inferred from RGB using DepthAnything V2 by setting `enable_depth=1`. Just set `enable_depth=0` for RGB-only input or `1` for RGB-D input in use_api.py. https://github.com/Zhoues/RoboRefer/blob/15f93d48c1e205d954eeb8de989cdae3cef7abbb/API/use_api.py#L61
 
       ```bash
       cd API 
