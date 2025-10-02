@@ -100,7 +100,7 @@
 1. Install [Anaconda Distribution](https://www.anaconda.com/download/).
 2. Install the necessary Python packages in the environment.
       ```bash
-      bash env_step.sh roborefer
+      bash env_setup.sh roborefer
       ```
 3. Activate a conda environment.
       ```bash
