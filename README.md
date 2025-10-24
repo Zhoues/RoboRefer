@@ -24,6 +24,8 @@
 
 ## 🔥 Updates
 
+[2025-10-25] 🔥🔥🔥 [RefSpatial-Expand-Bench](https://huggingface.co/datasets/JingkunAn/RefSpatial-Expand-Bench) is now released! Based on the original benchmark, the new version expands indoor scenes (e.g., factories, stores) and introduces previously **unexplored outdoor scenarios (e.g., streets, parking lots)**, offering a **more comprehensive evaluation of spatial referring tasks**.
+
 [2025-09-26] 🔥🔥🔥 RefSpatial-Bench is now used by [Qwen3-VL](https://github.com/QwenLM/Qwen3-VL) and [Gemini-Robotics-1.5](https://deepmind.google/discover/blog/gemini-robotics-15-brings-ai-agents-into-the-physical-world/) to evaluate spatial reasoning in complex embodied scenarios! Come on, test your model with RefSpatial-Bench!
 
 <table>
@@ -92,6 +94,10 @@
   </tr>
   <tr>
     <td><a href="https://huggingface.co/datasets/BAAI/RefSpatial-Bench">RefSpatial-Bench</a></td>
+    <td> The benchmark for spatial referring with reasoning. </td>
+  </tr>
+  <tr>
+    <td><a href="https://huggingface.co/datasets/JingkunAn/RefSpatial-Expand-Bench">RefSpatial-Expand-Bench</a></td>
     <td> The benchmark for spatial referring with reasoning. </td>
   </tr>
 </table>
@@ -233,11 +239,12 @@ Below are the results of the inference as examples (tabletop scenes and outdoor 
 
 ## 🔍 Evaluation for RefSpatial-Bench
 
-1. Open the `Evaluation` folder and download the RefSpatial-Bench dataset from the [model zoo](#-model-zoo---dataset--benchmark).
+1. Open the `Evaluation` folder and download the RefSpatial-Bench/RefSpatial-Expand-Bench from the [model zoo](#-model-zoo---dataset--benchmark).
     ```bash
     cd Evaluation
     git lfs install
     git clone https://huggingface.co/datasets/BAAI/RefSpatial-Bench
+    # git clone https://huggingface.co/datasets/JingkunAn/RefSpatial-Expand-Bench
     ```
 
 2. Run the API server as the same as the third step in [Inference](#-inference).
