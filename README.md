@@ -98,7 +98,7 @@
   </tr>
   <tr>
     <td><a href="https://huggingface.co/datasets/JingkunAn/RefSpatial-Expand-Bench">RefSpatial-Expand-Bench</a></td>
-    <td> The benchmark for spatial referring with reasoning. </td>
+    <td> A more comprehensive benchmark for spatial referring with reasoning. </td>
   </tr>
 </table>
 
