@@ -24,6 +24,8 @@
 
 ## 🔥 Updates
 
+[2025-12-16] 🔥🔥🔥 RoboTracer is released on [arxiv](https://arxiv.org/abs/2512.13660) and the project page is set up at [here](https://zhoues.github.io/RoboTracer/)! This is a more powerful version of RoboRefer, which not only supports all features of RoboRefer but also multi-step metric-grounded spatial tracing with explicit reasoning.
+
 [2025-10-25] 🔥🔥🔥 [RefSpatial-Expand-Bench](https://huggingface.co/datasets/JingkunAn/RefSpatial-Expand-Bench) is now released! Based on the original benchmark, the new version expands indoor scenes (e.g., factories, stores) and introduces previously **unexplored outdoor scenarios (e.g., streets, parking lots)**, offering a **more comprehensive evaluation of spatial referring tasks**.
 
 [2025-09-26] 🔥🔥🔥 RefSpatial-Bench is now used by [Qwen3-VL](https://github.com/QwenLM/Qwen3-VL) and [Gemini-Robotics-1.5](https://deepmind.google/discover/blog/gemini-robotics-15-brings-ai-agents-into-the-physical-world/) to evaluate spatial reasoning in complex embodied scenarios! Come on, test your model with RefSpatial-Bench!
