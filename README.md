@@ -24,8 +24,7 @@
 
 ## 🔥 Updates
 
-[2025-12-16] 🔥🔥🔥 RoboTracer is released on [arxiv](https://arxiv.org/abs/2512.13660) and the project page is set up at [here](https://zhoues.github.io/RoboTracer/)! As a more powerful version of RoboRefer, it retains all RoboRefer features while also supporting multi-step, metric-grounded spatial tracing with explicit reasoning.
-
+[2025-12-16] 🔥🔥🔥 RoboTracer is released on [arxiv](https://arxiv.org/abs/2512.13660) and the project page is set up at [here](https://zhoues.github.io/RoboTracer/)! This is a more powerful version of RoboRefer, which not only supports all features of RoboRefer but also multi-step metric-grounded spatial tracing with explicit reasoning. Come and try the newer dataset TraceSpatial and the more challenging benchmark TraceSpatial-Bench!
 
 [2025-10-25] 🔥🔥🔥 [RefSpatial-Expand-Bench](https://huggingface.co/datasets/JingkunAn/RefSpatial-Expand-Bench) is now released! Based on the original benchmark, the new version expands indoor scenes (e.g., factories, stores) and introduces previously **unexplored outdoor scenarios (e.g., streets, parking lots)**, offering a **more comprehensive evaluation of spatial referring tasks**.
 
